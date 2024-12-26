@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            background-image: url('blog.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('blog.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            opacity: 0.2; /* Adjust opacity value here */
+            z-index: -1;
+        }
+
+        header {
+           background-color: rgba(87, 59, 42, 0.7);        
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2em;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2em;
+
+
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background:rgba(87, 59, 42, 0.7);
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        h1, h2 {
+            font-family: 'Lobster', cursive;
+            font-size:30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .intro {
+            text-align: left;
+        }
+
+        .article {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: #fff;
+        }
+
+        .article h3 {
+            margin-top: 0;
+        }
+       .comment-section {
+        margin-top: 1em; 
+        text-align: left; 
+        } 
+        .comment-section textarea { 
+         width: 100%; 
+         padding: 0.5em; 
+         margin-top: 0.5em; 
+         } 
+         .comment-section button {
+          padding: 0.5em 1em; 
+          background: rgba(87, 59, 42, 0.7);
+          color: #fff; 
+          border: none; 
+          cursor: pointer; m
+          argin-top: 0.5em; 
+          } 
+         .comment { 
+          border-top: 1px solid #ddd;
+          padding-top: 0.5em; 
+          margin-top: 0.5em; 
+          }
+
+         .visible-text{
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 1em; 
+        border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Pen & Lens</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('articles')">Articles</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+        <h2>Discover the World of Knowledge</h2>
+        <div class="intro">
+            <p>Welcome to The Pen & Lens, a haven for knowledge seekers and curious minds! Here, you'll find a treasure trove of articles covering a wide array of topics. From the latest global economic trends and political developments in Asia to the pressing issue of climate change and its impact, we've got it all.</p>
+            <p>Our goal is to provide you with well-researched, insightful, and engaging content that broadens your understanding of the world. Each article is crafted with care to ensure it offers valuable perspectives and up-to-date information. Whether you're looking to stay informed on current affairs, delve into deep analyses, or simply enjoy compelling storytelling, our blog is the perfect place for you.</p>
+            <p>Feel free to explore our various sections, and don't hesitate to leave your thoughts and feedback in the comments. Dive in and enjoy the journey!.</p>
+        </div>
+    </main>
+    <section id="about" class="hidden">
+        <div class="visible-text">
+        <h2>About Us</h2>
+        <p>This blog is dedicated to sharing knowledge and insights on various topics. Our team of writers and researchers is passionate about exploring the complexities of the world and presenting them in a clear and engaging manner. We believe in the power of information to inspire, educate, and bring about positive change.</p>
+        <p>Our content spans a wide range of subjects, including:</p>
+        <ul>
+            <li><strong>Gen Z:</strong>Gen Z, born between 1997 and 2012, is a tech-savvy, socially conscious, and diverse generation</li>
+            <li><strong>Political Developments:</strong> Gain insights into the political landscape of different regions, policy changes, and international relations.</li>
+            <li><strong>AI and Robotics:</strong>:Artificial Intelligence (AI) and Robotics are transforming the world by merging human ingenuity with machine intelligence, creating innovative solution</li>
+            <li><strong>Technology and Innovation:</strong> Explore the advancements in technology, their applications, and their implications for the future.</li>
+            <li><strong>Culture and Society:</strong> Discover the rich tapestry of cultures, traditions, and societal changes shaping our world.</li>
+        </ul>
+        <p>We are committed to providing high-quality, accurate, and thought-provoking content. Thank you for being a part of our community. Together, let's explore the world, one article at a time!</p>
+    </section>
+    <section id="articles" class="hidden">
+        <h2>All Articles</h2>
+        <div class="article">
+            <h3>Gen Z</h3>
+            <p>Generation Z, born roughly between the late 1990s and the early 2010s, is the first generation to truly grow up in a hyper-connected digital world. They are digital natives, fluent in the language of technology from a young age. This unique upbringing has profoundly shaped their relationship with technology and, in turn, is influencing the trajectory of the digital age Gen Zs are constantly connected. Smartphones are an extension of themselves, used for everything from communication and entertainment to learning and social interaction.  They are adept at navigating the complexities of social media platforms, understanding their nuances and utilizing them for self-expression, social networking, and even career building.   
+Gen Z thrives on visual content. Platforms like TikTok and Instagram have captivated their attention with short-form videos, captivating visuals, and engaging trends.    While comfortable with technology, Gen Z is also acutely aware of privacy concerns. They are more likely than previous generations to be cautious about sharing personal information online and to utilize privacy settings on social media platforms.Gen Z is highly active on social media platforms like TikTok, Instagram, Snapchat, and YouTube. They use these platforms to connect with others, share their experiences, and consume content.Gen Z is a mobile-first generation. They use their smartphones to access the internet, play games, watch videos, and communicate with others.
+Gen Z is an avid gaming generation. They play games on their smartphones, consoles, and PCs. Gaming is a significant part of their entertainment and socialization.Gen Z is comfortable with online learning. They use digital resources, such as online courses, tutorials, and videos, to learn new skills and access information.
+
+
+<div class="comment-section">
+ <h4>Comments</h4> <div id="comments-1"> 
+<!-- Comments will be added here --> 
+</div> <textarea id="comment-input-1" placeholder="Add a comment..."></textarea> 
+<button onclick="addComment(1)">Post Comment</button> </div> 
+<div class="rating">
+ <h4>Rate this article:</h4> 
+<input type="radio" id="star5-2" name="rating-2" value="5">
+<label for="star5-2" title="5 stars">☆</label> 
+<input type="radio" id="star4-2" name="rating-2" value="4">
+<label for="star4-2" title="4 stars">☆</label> 
+<input type="radio" id="star3-2" name="rating-2" value="3">
+<label for="star3-2" title="3 stars">☆</label>
+ <input type="radio" id="star2-2" name="rating-2" value="2">
+<label for="star2-2" title="2 stars">☆</label> <input type="radio" id="star1-2" name="rating-2" value="1">
+<label for="star1-2" title="1 star">☆</label> 
+</div>
+
+</div>
+        <div class="article">
+            <h3>Political Developments in Asia</h3>
+            <p>Asia has been a hotspot for political developments, with elections, policy changes, and international relations taking center stage. Countries in the region are navigating complex geopolitical landscapes while striving for economic stability and growth. Notable events include key elections in major countries, policy shifts addressing economic challenges, and diplomatic efforts to foster regional cooperation. The dynamic political environment in Asia continues to influence global politics and economics, making it a region to watch closely in the coming years.The political climate in Asia today is heavily influenced by its colonial past. Many countries in the region were once colonies of European powers, and the legacies of colonialism continue to affect their political structures and relationships. For instance, the tensions in regions like the South China Sea, Kashmir, and Taiwan can be traced back to historical conflicts and colonial boundaries.Several regional organizations aim to foster cooperation and address common challenges in Asia. The Association of Southeast Asian Nations (ASEAN) is a notable example, promoting economic, political, and security cooperation among its member states. Other organizations, such as the Shanghai Cooperation Organisation (SCO) and the South Asian Association for Regional Cooperation (SAARC), also play significant roles in shaping the political dynamics of the region</p>
+<div class="comment-section"> <h4>Comments</h4> 
+<div id="comments-2"> 
+</div> 
+<textarea id="comment-input-2" placeholder="Add a comment..."></textarea>
+ <button onclick="addComment(2)">Post Comment</button>
+ </div>
+
+<div class="rating"> 
+<h4>Rate this article:</h4>
+ <input type="radio" id="star5-2" name="rating-2" value="5">
+<label for="star5-2" title="5 stars">☆</label> 
+<input type="radio" id="star4-2" name="rating-2" value="4"><label for="star4-2" title="4 stars">☆</label> 
+<input type="radio" id="star3-2" name="rating-2" value="3"><label for="star3-2" title="3 stars">☆</label> 
+<input type="radio" id="star2-2" name="rating-2" value="2">
+<label for="star2-2" title="2 stars">☆</label> 
+<input type="radio" id="star1-2" name="rating-2" value="1"><label for="star1-2" title="1 star">☆</label> 
+</div>
+      </div>
+        <div class="article">
+
+            <h3>AI and Robotics</h3>
+            <p>The world is on the cusp of a revolution, driven by the rapid advancements in Artificial Intelligence (AI) and Robotics. These technologies are transforming industries, redefining jobs, and improving lives. In this article, we'll explore the latest developments in AI and Robotics, and their impact on various sectors.
+Artificial Intelligence refers to the development of computer systems that can perform tasks that typically require human intelligence, such as learning, problem-solving, and decision-making. AI has made tremendous progress in recent years, thanks to the availability of large datasets, advancements in algorithms, and increased computing power.Robotics is the intersection of AI, engineering, and computer science. Robots are designed to perform tasks that typically require human intervention, such as assembly, welding, and material handling. With the advent of AI, robots are becoming increasingly sophisticated, capable of learning, adapting, and interacting with their environment.As AI and Robotics continue to advance, there's growing concern about job displacement. However, experts argue that while automation may replace some jobs, it will also create new ones. The future of work will be characterized by human-robot collaboration, where humans and machines work together to achieve common goals.The convergence of AI and Robotics is transforming industries and redefining the future of work. While there are challenges associated with these technologies, the benefits far outweigh the costs. As we embark on this exciting journey, it's essential to prioritize education, re-skilling, and up-skilling to ensure that humans are equipped to work alongside machines.
+
+The future of intelligence is here, and it's a future where humans and machines collaborate to create a better world.
+
+</p>
+<div class="comment-section"> <h4>Comments</h4> 
+<div id="comments-3"> 
+</div> <textarea id="comment-input-3" placeholder="Add a comment..."></textarea>
+ <button onclick="addComment(3)">Post Comment</button>
+ </div>
+
+<div class="rating"> 
+<h4>Rate this article:</h4> 
+<input type="radio" id="star5-2" name="rating-2" value="5"><label for="star5-2" title="5 stars">☆</label> 
+<input type="radio" id="star4-2" name="rating-2" value="4"><label for="star4-2" title="4 stars">☆</label> 
+<input type="radio" id="star3-2" name="rating-2" value="3"><label for="star3-2" title="3 stars">☆</label> 
+<input type="radio" id="star2-2" name="rating-2" value="2"><label for="star2-2" title="2 stars">☆</label> 
+<input type="radio" id="star1-2" name="rating-2" value="1"><label for="star1-2" title="1 star">☆</label> 
+</div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 The Pen and Lens. All rights reserved.<br>
+                  </br>Contact us: pen&lens@gmail.com</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            document.querySelectorAll('main, section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Show the selected section
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+        function addComment(articleId) 
+        { 
+        const commentInput = document.getElementById(comment-input-${articleId}); 
+        const commentText = commentInput.value;
+        if (commentText) 
+        { 
+        const commentsDiv = document.getElementById(comments-${articleId});
+        const newComment = document.createElement('div'); 
+        newComment.className = 'comment'; 
+        newComment.textContent = commentText;
+        commentsDiv.appendChild(newComment);
+        commentInput.value = '';
+ }
+}
+    </script>
+</body>
+</html>
